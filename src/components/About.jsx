@@ -78,21 +78,6 @@ const About = () => {
             </div>
           ))}
         </div>
-
-        {/* Stats */}
-        <div className="mt-20 grid grid-cols-2 md:grid-cols-4 gap-8">
-          {[
-            { number: '14+', label: 'Years Experience' },
-            { number: '5000+', label: 'Businesses Supported' },
-            { number: '$25B+', label: 'Value Unlocked' },
-            { number: '2X', label: 'Growth Acceleration' },
-          ].map((stat, index) => (
-            <div key={index} className="text-center">
-              <div className="text-4xl md:text-5xl font-bold text-accent mb-2">{stat.number}</div>
-              <div className="text-gray-600 font-medium">{stat.label}</div>
-            </div>
-          ))}
-        </div>
       </div>
     </section>
   )

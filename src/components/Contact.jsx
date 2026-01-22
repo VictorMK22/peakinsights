@@ -1,152 +1,239 @@
-// src/components/Contact.jsx
 import { useState } from 'react'
 import { 
   FaPhone, 
   FaEnvelope, 
-  FaMapMarkerAlt, 
-  FaTwitter,
-  FaYoutube,
-  FaFacebook,
-  FaLinkedin,
-  FaCar,
-  FaWifi,
-  FaBuilding,
-  FaGlobeAfrica
+  FaMapMarkerAlt,
+  FaPaperPlane,
+  FaCheckCircle
 } from 'react-icons/fa'
 
 const Contact = () => {
-  const [copiedNumber, setCopiedNumber] = useState(null)
+  const [formData, setFormData] = useState({
+    name: '',
+    email: '',
+    phone: '',
+    company: '',
+    message: ''
+  })
+  const [submitted, setSubmitted] = useState(false)
+  const [isSubmitting, setIsSubmitting] = useState(false)
 
-  const handleCopyNumber = (number) => {
-    navigator.clipboard.writeText(number).then(() => {
-      setCopiedNumber(number)
-      setTimeout(() => setCopiedNumber(null), 2000)
-    })
+  const handleSubmit = (e) => {
+    e.preventDefault()
+    setIsSubmitting(true)
+    
+    // Simulate form submission
+    setTimeout(() => {
+      setIsSubmitting(false)
+      setSubmitted(true)
+      
+      // Reset after showing success message
+      setTimeout(() => {
+        setSubmitted(false)
+        setFormData({ name: '', email: '', phone: '', company: '', message: '' })
+      }, 3000)
+    }, 1000)
   }
 
-  const contactInfo = [
-    {
-      icon: <FaPhone className="text-2xl" />,
-      title: 'Phone Numbers',
-      details: [
-        { label: 'Primary Line', value: '0725 228 572' },
-        { label: 'Secondary Line', value: '0736 105 920' }
-      ],
-      color: 'bg-blue-50 border-blue-100',
-      iconColor: 'text-blue-600',
-      action: 'call'
-    },
-    {
-      icon: <FaEnvelope className="text-2xl" />,
-      title: 'Email Address',
-      details: [
-        { label: 'Advisory Services', value: 'advisory@peak-insights.com' }
-      ],
-      color: 'bg-green-50 border-green-100',
-      iconColor: 'text-green-600',
-      action: 'email'
-    },
-    {
-      icon: <FaMapMarkerAlt className="text-2xl" />,
-      title: 'Office Location',
-      details: [
-        { label: 'Address', value: 'Golden Mango Heights, 9th Floor' },
-        { label: 'Street', value: 'Wood Avenue' },
-        { label: 'City', value: 'Nairobi' }
-      ],
-      color: 'bg-purple-50 border-purple-100',
-      iconColor: 'text-purple-600',
-      action: 'location'
-    },
-    {
-      icon: <FaTwitter className="text-2xl" />,
-      title: 'Social Media',
-      details: [
-        { label: 'Twitter', value: '@PeakInsightsKE' },
-        { label: 'YouTube', value: '@PeakInsightsKE' },
-        { label: 'Facebook', value: '@PeakInsightsKE' },
-        { label: 'LinkedIn', value: '@PeakInsightsKE' }
-      ],
-      color: 'bg-orange-50 border-orange-100',
-      iconColor: 'text-orange-600',
-      action: 'social'
-    }
-  ]
+  const handleChange = (e) => {
+    setFormData({ ...formData, [e.target.name]: e.target.value })
+  }
 
   return (
-    <section id="contact" className="py-20 bg-gray-50">
-      <div className="container mx-auto px-6">
-        <div className="text-center mb-16">
-          <span className="inline-block px-4 py-2 bg-accent/10 text-accent rounded-full font-semibold mb-4">
-            Get in Touch
-          </span>
-          <h2 className="text-4xl md:text-5xl font-bold mb-6 text-primary">
-            Contact PeakInsights
+    <section id="contact" className="relative py-20 bg-gray-light overflow-hidden">
+      {/* Subtle background pattern */}
+      <div className="absolute inset-0 opacity-5">
+        <div className="absolute top-0 left-0 w-full h-full" 
+             style={{
+               backgroundImage: `radial-gradient(circle at 2px 2px, var(--accent) 1px, transparent 0)`,
+               backgroundSize: '40px 40px'
+             }}>
+        </div>
+      </div>
+
+      <div className="container mx-auto px-6 relative z-10">
+        {/* Header */}
+        <div className="text-center mb-16 max-w-3xl mx-auto">
+          <h2 className="text-4xl md:text-5xl lg:text-6xl font-bold mb-6 text-primary">
+            Let's Talk About Your Business
           </h2>
-          <p className="text-xl text-gray-600 max-w-3xl mx-auto">
-            Reach out to us through any of these channels. We're here to help your business grow.
+          <p className="text-lg md:text-xl text-accent leading-relaxed">
+            Ready to transform your business? Get in touch with our team and let's build something exceptional together.
           </p>
         </div>
 
-        {/* Contact Information Grid */}
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-8 mb-16">
-          {contactInfo.map((info, index) => (
-            <div
-              key={index}
-              className={`${info.color} border rounded-2xl p-8 hover-lift transition-all duration-300`}
-            >
-              <div className="flex items-center mb-6">
-                <div className={`p-4 rounded-xl ${info.color} ${info.iconColor} mr-4`}>
-                  {info.icon}
-                </div>
-                <h3 className="text-2xl font-bold text-gray-800">{info.title}</h3>
-              </div>
+        {/* Main Content Grid */}
+        <div className="grid grid-cols-1 lg:grid-cols-5 gap-12 max-w-7xl mx-auto">
+          
+          {/* Contact Information */}
+          <div className="lg:col-span-2 space-y-8">
+            <div>
+              <h3 className="text-2xl font-bold text-primary mb-8">Get in Touch</h3>
               
-              <div className="space-y-4">
-                {info.details.map((detail, idx) => (
-                  <div key={idx}>
-                    <div className="font-semibold text-gray-700 mb-1">{detail.label}</div>
-                    <div className="flex items-center justify-between">
-                      <div className="text-gray-600">{detail.value}</div>
-                      {info.action === 'call' && (
-                        <div className="flex items-center space-x-2">
-                          <button
-                            onClick={() => handleCopyNumber(detail.value)}
-                            className="text-sm text-accent hover:text-primary font-medium"
-                          >
-                            {copiedNumber === detail.value ? 'Copied!' : 'Copy'}
-                          </button>
-                        </div>
-                      )}
-                      {info.action === 'email' && (
-                        <a
-                          href={`mailto:${detail.value}`}
-                          className="text-sm bg-accent text-white px-3 py-1 rounded-lg hover:bg-primary transition-colors"
-                        >
-                          Email
-                        </a>
-                      )}
-                      {info.action === 'social' && (
-                        <a
-                          href={
-                            detail.label === 'Twitter' ? 'https://twitter.com/PeakInsightsKE' :
-                            detail.label === 'YouTube' ? 'https://youtube.com/@PeakInsightsKE' :
-                            detail.label === 'Facebook' ? 'https://facebook.com/PeakInsightsKE' :
-                            'https://linkedin.com/company/PeakInsightsKE'
-                          }
-                          target="_blank"
-                          rel="noopener noreferrer"
-                          className="text-sm bg-accent text-white px-3 py-1 rounded-lg hover:bg-primary transition-colors"
-                        >
-                          Follow
-                        </a>
-                      )}
-                    </div>
+              <div className="space-y-6">
+                {/* Phone */}
+                <div className="flex items-start gap-4 group">
+                  <div className="flex-shrink-0 w-12 h-12 bg-primary rounded-lg flex items-center justify-center group-hover:bg-accent transition-colors duration-300">
+                    <FaPhone className="text-white text-lg" />
                   </div>
-                ))}
+                  <div>
+                    <h4 className="font-semibold text-primary mb-2">Phone</h4>
+                    <a href="tel:0725228572" className="text-accent hover:text-primary transition-colors block">
+                      0725 228 572
+                    </a>
+                    <a href="tel:0736105920" className="text-accent hover:text-primary transition-colors block">
+                      0736 105 920
+                    </a>
+                  </div>
+                </div>
+
+                {/* Email */}
+                <div className="flex items-start gap-4 group">
+                  <div className="flex-shrink-0 w-12 h-12 bg-primary rounded-lg flex items-center justify-center group-hover:bg-accent transition-colors duration-300">
+                    <FaEnvelope className="text-white text-lg" />
+                  </div>
+                  <div>
+                    <h4 className="font-semibold text-primary mb-2">Email</h4>
+                    <a href="mailto:advisory@peak-insights.com" className="text-accent hover:text-primary transition-colors">
+                      advisory@peak-insights.com
+                    </a>
+                  </div>
+                </div>
+
+                {/* Location */}
+                <div className="flex items-start gap-4 group">
+                  <div className="flex-shrink-0 w-12 h-12 bg-primary rounded-lg flex items-center justify-center group-hover:bg-accent transition-colors duration-300">
+                    <FaMapMarkerAlt className="text-white text-lg" />
+                  </div>
+                  <div>
+                    <h4 className="font-semibold text-primary mb-2">Office</h4>
+                    <p className="text-accent">
+                      Golden Mango Heights, 9th Floor<br />
+                      Wood Avenue, Nairobi
+                    </p>
+                  </div>
+                </div>
               </div>
             </div>
-          ))}
+          </div>
+
+          {/* Contact Form */}
+          <div className="lg:col-span-3">
+            <div className="bg-white rounded-2xl p-8 md:p-10 shadow-lg border border-light">
+              <h3 className="text-2xl font-bold text-primary mb-2">Send Us a Message</h3>
+              <p className="text-accent mb-8">Fill out the form below and we'll get back to you within 24 hours.</p>
+              
+              <form onSubmit={handleSubmit} className="space-y-6">
+                <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+                  <div>
+                    <label className="block text-sm font-semibold text-primary mb-2">
+                      Full Name <span className="text-red-500">*</span>
+                    </label>
+                    <input
+                      type="text"
+                      name="name"
+                      value={formData.name}
+                      onChange={handleChange}
+                      required
+                      className="w-full px-4 py-3 rounded-lg border-2 border-light focus:border-accent focus:outline-none transition-colors bg-gray-light"
+                      placeholder="John Doe"
+                    />
+                  </div>
+                  
+                  <div>
+                    <label className="block text-sm font-semibold text-primary mb-2">
+                      Email Address <span className="text-red-500">*</span>
+                    </label>
+                    <input
+                      type="email"
+                      name="email"
+                      value={formData.email}
+                      onChange={handleChange}
+                      required
+                      className="w-full px-4 py-3 rounded-lg border-2 border-light focus:border-accent focus:outline-none transition-colors bg-gray-light"
+                      placeholder="john@example.com"
+                    />
+                  </div>
+                </div>
+
+                <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+                  <div>
+                    <label className="block text-sm font-semibold text-primary mb-2">
+                      Phone Number
+                    </label>
+                    <input
+                      type="tel"
+                      name="phone"
+                      value={formData.phone}
+                      onChange={handleChange}
+                      className="w-full px-4 py-3 rounded-lg border-2 border-light focus:border-accent focus:outline-none transition-colors bg-gray-light"
+                      placeholder="+254 700 000 000"
+                    />
+                  </div>
+                  
+                  <div>
+                    <label className="block text-sm font-semibold text-primary mb-2">
+                      Company Name
+                    </label>
+                    <input
+                      type="text"
+                      name="company"
+                      value={formData.company}
+                      onChange={handleChange}
+                      className="w-full px-4 py-3 rounded-lg border-2 border-light focus:border-accent focus:outline-none transition-colors bg-gray-light"
+                      placeholder="Your Company"
+                    />
+                  </div>
+                </div>
+                
+                <div>
+                  <label className="block text-sm font-semibold text-primary mb-2">
+                    Message <span className="text-red-500">*</span>
+                  </label>
+                  <textarea
+                    name="message"
+                    value={formData.message}
+                    onChange={handleChange}
+                    required
+                    rows="6"
+                    className="w-full px-4 py-3 rounded-lg border-2 border-light focus:border-accent focus:outline-none transition-colors resize-none bg-gray-light"
+                    placeholder="Tell us about your business needs and how we can help..."
+                  ></textarea>
+                </div>
+                
+                <button
+                  type="submit"
+                  disabled={submitted || isSubmitting}
+                  className={`w-full py-4 rounded-lg font-semibold text-lg transition-all duration-300 flex items-center justify-center gap-3 ${
+                    submitted
+                      ? 'bg-green-600 text-white'
+                      : 'bg-primary text-white hover:bg-accent hover:shadow-lg'
+                  } ${isSubmitting ? 'opacity-70 cursor-not-allowed' : ''}`}
+                >
+                  {submitted ? (
+                    <>
+                      <FaCheckCircle className="text-xl" />
+                      Message Sent Successfully!
+                    </>
+                  ) : isSubmitting ? (
+                    <>
+                      <div className="w-5 h-5 border-2 border-white border-t-transparent rounded-full animate-spin"></div>
+                      Sending...
+                    </>
+                  ) : (
+                    <>
+                      <FaPaperPlane />
+                      Send Message
+                    </>
+                  )}
+                </button>
+
+                <p className="text-sm text-accent text-center">
+                  By submitting this form, you agree to our privacy policy and terms of service.
+                </p>
+              </form>
+            </div>
+          </div>
         </div>
       </div>
     </section>

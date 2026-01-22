@@ -123,14 +123,14 @@ const Services = () => {
               </div>
 
               {/* Footer */}
-              <div className="px-8 pb-8">
+              {/* <div className="px-8 pb-8">
                 <a
                   href="#contact"
                   className="block w-full text-center bg-gray-100 hover:bg-accent hover:text-white text-gray-800 font-semibold py-3 rounded-lg transition-all duration-300 group-hover:scale-105"
                 >
                   Learn More
                 </a>
-              </div>
+              </div> */}
             </div>
           ))}
         </div>
