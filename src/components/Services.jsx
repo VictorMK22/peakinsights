@@ -1,0 +1,165 @@
+import { FaDollarSign, FaRocket, FaUsers } from 'react-icons/fa'
+
+const Services = () => {
+  const services = [
+    {
+      icon: <FaDollarSign className="text-4xl" />,
+      title: 'Fractional CFO',
+      subtitle: 'Financial Leadership Without Compromise',
+      tagline: 'Your full-time CFO; at a fraction of the cost.',
+      description: 'Fast-growing businesses don\'t fail because they lack ambition. They fail because they lack financial command.',
+      features: [
+        'Weekly, monthly & board-level financial reporting',
+        'Cashflow control, forecasting & scenario planning',
+        'Tax planning & compliance oversight',
+        'Financial modeling for growth, funding & expansion',
+        'CEO & Board advisory',
+        'Internal controls & risk management frameworks',
+        'Financial literacy & decision-making training for teams',
+      ],
+      outcome: 'We turn finance from a rear-view mirror into a navigation system.',
+      color: 'from-blue-600 to-cyan-600',
+    },
+    {
+      icon: <FaRocket className="text-4xl" />,
+      title: 'Growth & Transformation Advisory',
+      subtitle: 'Strategy That Actually Gets Executed',
+      tagline: 'Re-imagined strategy consulting for modern business.',
+      description: 'We partner with organizations ready to break through stagnation and execute bold transformation.',
+      features: [
+        'Strategy design & execution roadmaps',
+        'Change management & transformation leadership',
+        'Operating model redesign',
+        'Business turnaround & restructuring',
+        'Process optimization & operational excellence',
+        'Leadership development & culture transformation',
+      ],
+      outcome: 'Transformation is uncomfortable. We bring structure, courage and momentum.',
+      color: 'from-purple-600 to-pink-600',
+    },
+    {
+      icon: <FaUsers className="text-4xl" />,
+      title: 'Family Business Advisory',
+      subtitle: 'Building Businesses That Survive Generations',
+      tagline: 'Transforming family enterprises into lasting legacies.',
+      description: 'Family businesses are powerful and fragile. They don\'t collapse because of markets.',
+      features: [
+        'Succession planning & leadership transition',
+        'Governance frameworks & family constitutions',
+        'Family council facilitation',
+        'Business strategy & expansion support',
+        'Wealth structuring & estate planning support',
+        'Next-generation leadership development',
+      ],
+      outcome: 'Our goal is simple: Protect the family, strengthen the business and preserve the legacy.',
+      color: 'from-green-600 to-emerald-600',
+    },
+  ]
+
+  return (
+    <section id="services" className="py-20 bg-gray-50">
+      <div className="container mx-auto px-6">
+        <div className="text-center mb-16">
+          <span className="inline-block px-4 py-2 bg-accent/10 text-accent rounded-full font-semibold mb-4">
+            Our Expertise
+          </span>
+          <h2 className="text-4xl md:text-5xl font-bold mb-6 text-primary">
+            Our Advisory Services
+          </h2>
+          <p className="text-xl text-gray-600 max-w-3xl mx-auto">
+            We don't give advice. We build systems, discipline and leadership that win; today and for decades.
+          </p>
+        </div>
+
+        <div className="grid grid-cols-1 lg:grid-cols-3 gap-8">
+          {services.map((service, index) => (
+            <div
+              key={index}
+              className="group bg-white rounded-2xl shadow-lg overflow-hidden hover-lift transition-all duration-500"
+            >
+              {/* Header with gradient */}
+              <div
+                className={`bg-gradient-to-r ${service.color} p-8 text-white relative overflow-hidden`}
+              >
+                <div className="absolute top-0 right-0 w-32 h-32 bg-white/10 rounded-full -translate-y-16 translate-x-16"></div>
+                <div className="relative z-10">
+                  <div className="inline-flex p-4 bg-white/20 rounded-2xl mb-6">
+                    {service.icon}
+                  </div>
+                  <h3 className="text-2xl font-bold mb-2">{service.title}</h3>
+                  <p className="text-white/90">{service.subtitle}</p>
+                </div>
+              </div>
+
+              {/* Body */}
+              <div className="p-8">
+                <div className="mb-6">
+                  <p className="font-bold text-lg text-gray-800 mb-4">{service.tagline}</p>
+                  <p className="text-gray-600 mb-6">{service.description}</p>
+                </div>
+
+                <div className="mb-6">
+                  <h4 className="font-bold text-lg text-primary mb-4">What We Do:</h4>
+                  <ul className="space-y-3">
+                    {service.features.map((feature, idx) => (
+                      <li key={idx} className="flex items-start">
+                        <svg
+                          className="w-5 h-5 text-accent mt-1 mr-3 flex-shrink-0"
+                          fill="none"
+                          stroke="currentColor"
+                          viewBox="0 0 24 24"
+                        >
+                          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 13l4 4L19 7" />
+                        </svg>
+                        <span className="text-gray-700">{feature}</span>
+                      </li>
+                    ))}
+                  </ul>
+                </div>
+
+                <div className="p-4 bg-gray-50 rounded-xl">
+                  <p className="text-gray-700 font-medium italic">{service.outcome}</p>
+                </div>
+              </div>
+
+              {/* Footer */}
+              <div className="px-8 pb-8">
+                <a
+                  href="#contact"
+                  className="block w-full text-center bg-gray-100 hover:bg-accent hover:text-white text-gray-800 font-semibold py-3 rounded-lg transition-all duration-300 group-hover:scale-105"
+                >
+                  Learn More
+                </a>
+              </div>
+            </div>
+          ))}
+        </div>
+
+        {/* Bottom CTA */}
+        <div className="mt-20 text-center">
+          <div className="inline-block bg-gradient-to-r from-primary to-accent p-1 rounded-2xl">
+            <div className="bg-white rounded-xl p-8 md:p-12">
+              <h3 className="text-2xl md:text-3xl font-bold mb-6 text-primary">
+                PeakInsights is not for everyone.
+              </h3>
+              <p className="text-xl text-gray-600 mb-8 max-w-2xl mx-auto">
+                It is for leaders who want to build businesses that scale, endure and dominate.
+              </p>
+              <a
+                href="#contact"
+                className="inline-flex items-center bg-gradient-to-r from-accent to-primary text-white px-8 py-4 rounded-full font-semibold text-lg hover:shadow-xl transition-all duration-300 hover:scale-105"
+              >
+                Contact Us
+                <svg className="w-5 h-5 ml-3" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17 8l4 4m0 0l-4 4m4-4H3" />
+                </svg>
+              </a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+  )
+}
+
+export default Services
