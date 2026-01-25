@@ -1,4 +1,6 @@
 import { FaLinkedin, FaTwitter, FaGraduationCap, FaBriefcase } from 'react-icons/fa'
+import NixonImage from '../assets/leadership/nixon.jpg';
+import LewisImage from '../assets/leadership/lewis.jpg';
 
 const Leadership = () => {
   const leaders = [
@@ -17,7 +19,7 @@ const Leadership = () => {
         'Institutional Strengthening',
         'Transformation',
       ],
-      imageUrl: '/src/assets/leadership/nixon.jpg',
+      imageUrl: NixonImage,
       linkedin: 'https://www.linkedin.com/in/nixonyebei/',
       twitter: 'https://x.com/NixonYebei',
     },
@@ -35,7 +37,7 @@ const Leadership = () => {
         'Operational Excellence',
         'Performance Improvement',
       ],
-      imageUrl: '/src/assets/leadership/lewis.jpg',
+      imageUrl: LewisImage,
       linkedin: 'https://www.linkedin.com/in/lewis-githaiga-42b0481ab',
       twitter: 'https://x.com/GithaigaLewis',
     },

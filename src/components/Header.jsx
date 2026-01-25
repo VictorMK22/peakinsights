@@ -1,5 +1,6 @@
 import { useState, useEffect } from 'react'
 import { FaBars, FaTimes, FaArrowRight } from 'react-icons/fa'
+import logo from "/src/assets/Logo.jpg"
 
 const Header = () => {
   const [isScrolled, setIsScrolled] = useState(false)
@@ -34,7 +35,7 @@ const Header = () => {
           {/* Logo */}
           <a href="#" className="flex items-center">
             <img 
-              src="/src/assets/Logo .jpg" 
+              src={logo}
               alt="PeakInsights Logo"
               width="60" 
               height="60"

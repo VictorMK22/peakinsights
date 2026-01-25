@@ -1,6 +1,5 @@
 import { FaMountain, FaFacebook, FaTwitter, FaLinkedin, FaYoutube, FaArrowUp } from 'react-icons/fa'
-import Contact from './Contact'
-import { Link } from 'react-router-dom'
+import logo from "/src/assets/Logo.jpg"
 
 const Footer = () => {
   const quickLinks = [
@@ -43,7 +42,7 @@ const Footer = () => {
           <div>
             <a href="#" className="flex items-center space-x-2 text-2xl font-bold mb-6">
               <img 
-                src="/src/assets/Logo .jpg" 
+                src={logo}
                 alt="PeakInsights Logo"
                 width="60" 
                 height="60"
