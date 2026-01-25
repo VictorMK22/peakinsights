@@ -8,7 +8,7 @@ import TrackRecord from './components/TrackRecord'
 import Values from './components/Values'
 import Leadership from './components/Leadership'
 import Contact from './components/Contact'          // Basic contact info
-import AdvisorForm from './components/AdvisorForm' // Talk to advisor form
+// import AdvisorForm from './components/AdvisorForm' // Talk to advisor form
 import Footer from './components/Footer'
 import ScrollToTop from './components/ScrollToTop'
 
@@ -46,7 +46,7 @@ function App() {
         <Values />
         <Leadership />
         <Contact />        {/* Basic contact information */}
-        <AdvisorForm />    {/* Talk to advisor form */}
+        {/* <AdvisorForm />    Talk to advisor form */}
       </main>
       <Footer />
       <ScrollToTop />

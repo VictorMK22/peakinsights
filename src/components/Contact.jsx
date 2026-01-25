@@ -1,4 +1,5 @@
 import { useState } from 'react'
+import emailjs from '@emailjs/browser'
 import { 
   FaPhone, 
   FaEnvelope, 
@@ -15,24 +16,55 @@ const Contact = () => {
     company: '',
     message: ''
   })
+  const [emailCopied, setEmailCopied] = useState(false)
+
+  const copyEmail = async () => {
+    try {
+      await navigator.clipboard.writeText('advisory@peak-insights.com')
+      setEmailCopied(true)
+      setTimeout(() => setEmailCopied(false), 2000)
+    } catch (err) {
+      console.error('Failed to copy email', err)
+    }
+  }
+
   const [submitted, setSubmitted] = useState(false)
   const [isSubmitting, setIsSubmitting] = useState(false)
 
-  const handleSubmit = (e) => {
+  const handleSubmit = async (e) => {
     e.preventDefault()
     setIsSubmitting(true)
-    
-    // Simulate form submission
-    setTimeout(() => {
-      setIsSubmitting(false)
+
+    try {
+      await emailjs.send(
+        import.meta.env.VITE_EMAILJS_SERVICE_ID,
+        import.meta.env.VITE_EMAILJS_TEMPLATE_ID,
+        {
+          name: formData.name,
+          email: formData.email,
+          phone: formData.phone,
+          company: formData.company,
+          message: formData.message
+        },
+        import.meta.env.VITE_EMAILJS_PUBLIC_KEY
+      )
+
       setSubmitted(true)
-      
-      // Reset after showing success message
-      setTimeout(() => {
-        setSubmitted(false)
-        setFormData({ name: '', email: '', phone: '', company: '', message: '' })
-      }, 3000)
-    }, 1000)
+      setFormData({
+        name: '',
+        email: '',
+        phone: '',
+        company: '',
+        message: ''
+      })
+
+      setTimeout(() => setSubmitted(false), 3000)
+    } catch (error) {
+      console.error('EmailJS Error:', error)
+      alert('Failed to send message. Please try again.')
+    } finally {
+      setIsSubmitting(false)
+    }
   }
 
   const handleChange = (e) => {
@@ -94,9 +126,18 @@ const Contact = () => {
                   </div>
                   <div>
                     <h4 className="font-semibold text-primary mb-2">Email</h4>
-                    <a href="mailto:advisory@peak-insights.com" className="text-accent hover:text-primary transition-colors">
+                    <button
+                      onClick={copyEmail}
+                      className="text-accent hover:text-primary transition-colors flex items-center gap-2 text-left"
+                      aria-label="Copy email address"
+                    >
                       advisory@peak-insights.com
-                    </a>
+                      {emailCopied && (
+                        <span className="text-xs text-green-600 font-medium">
+                          (Copied!)
+                        </span>
+                      )}
+                    </button>
                   </div>
                 </div>
 
@@ -227,10 +268,6 @@ const Contact = () => {
                     </>
                   )}
                 </button>
-
-                <p className="text-sm text-accent text-center">
-                  By submitting this form, you agree to our privacy policy and terms of service.
-                </p>
               </form>
             </div>
           </div>

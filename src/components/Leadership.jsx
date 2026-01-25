@@ -18,8 +18,8 @@ const Leadership = () => {
         'Transformation',
       ],
       imageUrl: '/src/assets/leadership/nixon.jpg',
-      linkedin: 'https://linkedin.com/in/nixon-yebei',
-      twitter: 'https://twitter.com/nixon_yebei',
+      linkedin: 'https://www.linkedin.com/in/nixonyebei/',
+      twitter: 'https://x.com/NixonYebei',
     },
     {
       name: 'Lewis Githaiga',
@@ -36,8 +36,8 @@ const Leadership = () => {
         'Performance Improvement',
       ],
       imageUrl: '/src/assets/leadership/lewis.jpg',
-      linkedin: 'https://linkedin.com/in/lewis-githaiga',
-      twitter: 'https://twitter.com/lewis_githaiga',
+      linkedin: 'https://www.linkedin.com/in/lewis-githaiga-42b0481ab',
+      twitter: 'https://x.com/GithaigaLewis',
     },
   ]
 

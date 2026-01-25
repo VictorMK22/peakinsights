@@ -31,13 +31,13 @@ const Hero = () => {
             >
               Explore Our Services
             </a>
-            <a
+            {/* <a
               href="#advisor-form"                             // Links to advisor form
               className="bg-accent text-white px-6 py-3 rounded-full font-semibold hover:bg-primary transition-all duration-300 hover:scale-105 shadow-lg flex items-center group"
             >
               <span>Talk to Advisor</span>
               <FaArrowRight className="ml-2 group-hover:translate-x-1 transition-transform duration-300" />
-            </a>
+            </a> */}
           </div>
 
           {/* Tagline Grid */}

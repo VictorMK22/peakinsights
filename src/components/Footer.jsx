@@ -1,4 +1,6 @@
 import { FaMountain, FaFacebook, FaTwitter, FaLinkedin, FaYoutube, FaArrowUp } from 'react-icons/fa'
+import Contact from './Contact'
+import { Link } from 'react-router-dom'
 
 const Footer = () => {
   const quickLinks = [
@@ -14,7 +16,6 @@ const Footer = () => {
     { label: 'Family Business Advisory', href: '#services' },
   ]
 
-  // Correct social media links with proper URLs and username @PeakInsightsKE
   const socialLinks = [
     { icon: <FaTwitter />, href: 'https://twitter.com/PeakInsightsKE', label: 'Twitter' },
     { icon: <FaYoutube />, href: 'https://youtube.com/@PeakInsightsKE', label: 'YouTube' },
@@ -24,6 +25,13 @@ const Footer = () => {
 
   const scrollToTop = () => {
     window.scrollTo({ top: 0, behavior: 'smooth' })
+  }
+
+  const goToContact = () => {
+    document.getElementById('contact')?.scrollIntoView({
+      behavior: 'smooth',
+      block: 'start',
+    })
   }
 
   return (
@@ -120,12 +128,27 @@ const Footer = () => {
                 </span>
               </li>
               <li className="flex items-center">
-                <svg className="w-5 h-5 text-highlight mr-3" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" />
+                <svg
+                  className="w-5 h-5 text-highlight mr-3"
+                  fill="none"
+                  stroke="currentColor"
+                  viewBox="0 0 24 24"
+                >
+                  <path
+                    strokeLinecap="round"
+                    strokeLinejoin="round"
+                    strokeWidth={2}
+                    d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"
+                  />
                 </svg>
-                <a href="mailto:advisory@peak-insights.com" className="text-gray-300 hover:text-highlight">
+
+                {/* Navigate to contact section when clicked */}
+                <button
+                  onClick={goToContact}
+                  className="text-gray-300 hover:text-highlight transition-colors"
+                >
                   advisory@peak-insights.com
-                </a>
+                </button>
               </li>
             </ul>
           </div>
