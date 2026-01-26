@@ -1,5 +1,5 @@
 import { FaLinkedin, FaTwitter, FaGraduationCap, FaBriefcase } from 'react-icons/fa'
-import NixonImage from '../assets/leadership/nixon.jpg';
+import NixonImage from '../assets/leadership/nixon.jpeg';
 import LewisImage from '../assets/leadership/lewis.jpg';
 
 const Leadership = () => {
