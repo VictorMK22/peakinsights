@@ -37,10 +37,10 @@ const About = () => {
           <h2 className="text-4xl md:text-5xl font-bold mb-6 text-primary">
             Built for Leaders Who Refuse to Plateau
           </h2>
-          <p className="text-xl text-gray-600">
+          <p className="text-xl text-gray-600 font-semibold">
             "If you could get all the people in an organization rowing in the same direction, 
             you could dominate any industry, in any market, against any competition, at any time."
-            <span className="block mt-4 italic">— Patrick Lencioni</span>
+            <span className="block mt-4 font-bold italic">— Patrick Lencioni</span>
           </p>
           <div className="mt-8">
             <p className="text-lg text-gray-700">
@@ -66,14 +66,14 @@ const About = () => {
               {Array.isArray(card.content) ? (
                 <ul className="space-y-3">
                   {card.content.map((item, idx) => (
-                    <li key={idx} className="flex items-center text-gray-700">
-                      <span className="w-2 h-2 bg-accent rounded-full mr-3"></span>
+                    <li key={idx} className="flex items-center text-gray-700 font-semibold">
+                      <span className="w-2 h-2 bg-[#0F2A5F] rounded-full mr-3"></span>
                       {item}
                     </li>
                   ))}
                 </ul>
               ) : (
-                <p className="text-gray-600 leading-relaxed">{card.content}</p>
+                <p className="text-gray-700 leading-relaxed font-semibold">{card.content}</p>
               )}
             </div>
           ))}

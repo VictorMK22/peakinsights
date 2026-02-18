@@ -2,7 +2,7 @@ import { useState, useEffect } from 'react'
 import { FaBars, FaTimes, FaArrowRight } from 'react-icons/fa'
 import logo from "/src/assets/Logo.jpg"
 
-const Header = () => {
+const MainHeader = () => {
   const [isScrolled, setIsScrolled] = useState(false)
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false)
 
@@ -14,12 +14,11 @@ const Header = () => {
     return () => window.removeEventListener('scroll', handleScroll)
   }, [])
 
-  // Clean navigation WITHOUT redundant "Contact"
+  // Navigation items for main routes only
   const navItems = [
-    { label: 'About', href: '#about' },
-    { label: 'The Problem', href: '#problem' },
-    { label: 'Services', href: '#services' },
-    { label: 'Leadership', href: '#leadership' },
+    { label: 'Home', href: '/' },
+    { label: 'Blogs', href: '/blog' },
+    { label: 'Business Diagnostic', href: '/landing' },
   ]
 
   return (
@@ -33,7 +32,7 @@ const Header = () => {
       <div className="container mx-auto px-6">
         <div className="flex items-center justify-between">
           {/* Logo */}
-          <a href="#" className="flex items-center">
+          <a href="/" className="flex items-center">
             <img 
               src={logo}
               alt="PeakInsights Logo"
@@ -56,10 +55,11 @@ const Header = () => {
                 {item.label}
               </a>
             ))}
+
             {/* Single, prominent CTA button */}
             <a
-              href="#contact"
-              className="bg-accent hover:bg-primary text-white px-6 py-3 rounded-full font-semibold transition-all duration-300 hover:scale-105 shadow-lg flex items-center group"
+              href="/#contact"
+              className="bg-[#0F2A5F] hover:bg-primary text-white px-3 py-2 rounded-full font-semibold transition-all duration-300 hover:scale-105 shadow-lg flex items-center group"
             >
               <span>Contact Us</span>
               <FaArrowRight className="ml-2 group-hover:translate-x-1 transition-transform duration-300" />
@@ -96,10 +96,11 @@ const Header = () => {
                   {item.label}
                 </a>
               ))}
-              {/* Mobile CTA - same as desktop */}
+
+              {/* Mobile CTA */}
               <a
-                href="#contact"
-                className="bg-accent text-white px-6 py-4 rounded-full font-semibold text-center hover:bg-primary transition-colors duration-300 mt-4 flex items-center justify-center group"
+                href="/#contact"
+                className="bg-[#0F2A5F] text-white px-3 py-2 rounded-full font-semibold text-center hover:bg-primary transition-colors duration-300 mt-4 flex items-center justify-center group"
                 onClick={() => setIsMobileMenuOpen(false)}
               >
                 <span>Contact Us</span>
@@ -113,4 +114,4 @@ const Header = () => {
   )
 }
 
-export default Header
+export default MainHeader

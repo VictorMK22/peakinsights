@@ -1,18 +1,22 @@
 import { FaMountain, FaFacebook, FaTwitter, FaLinkedin, FaYoutube, FaArrowUp } from 'react-icons/fa'
 import logo from "/src/assets/Logo.jpg"
+import { useNavigate, useLocation } from "react-router-dom"
 
 const Footer = () => {
+  const navigate = useNavigate()
+  const location = useLocation()
+
   const quickLinks = [
-    { label: 'About Us', href: '#about' },
-    { label: 'Services', href: '#services' },
-    { label: 'Leadership', href: '#leadership' },
-    { label: 'Contact', href: '#contact' },
+    { label: 'About Us', href: '/#about' },
+    { label: 'Services', href: '/#services' },
+    { label: 'Leadership', href: '/#leadership' },
+    { label: 'Contact', href: '/#contact' },
   ]
 
   const servicesLinks = [
-    { label: 'Fractional CFO', href: '#services' },
-    { label: 'Growth & Transformation', href: '#services' },
-    { label: 'Family Business Advisory', href: '#services' },
+    { label: 'Fractional CFO', href: '/#services' },
+    { label: 'Growth & Transformation', href: '/#services' },
+    { label: 'Family Business Advisory', href: '/#services' },
   ]
 
   const socialLinks = [
@@ -22,25 +26,25 @@ const Footer = () => {
     { icon: <FaLinkedin />, href: 'https://linkedin.com/company/PeakInsightsKE', label: 'LinkedIn' },
   ]
 
-  const scrollToTop = () => {
-    window.scrollTo({ top: 0, behavior: 'smooth' })
-  }
-
   const goToContact = () => {
-    document.getElementById('contact')?.scrollIntoView({
-      behavior: 'smooth',
-      block: 'start',
-    })
+    if (location.pathname !== "/") {
+      navigate("/#contact")
+    } else {
+      document.getElementById("contact")?.scrollIntoView({
+        behavior: "smooth",
+        block: "start",
+      })
+    }
   }
 
   return (
-    <footer className="bg-primary text-white">
+    <footer className="bg-[#0F2A5F] text-white">
       {/* Top Section */}
       <div className="container mx-auto px-6 py-12">
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
           {/* Brand Column */}
           <div>
-            <a href="#" className="flex items-center space-x-2 text-2xl font-bold mb-6">
+            <a href="/" className="flex items-center space-x-2 text-2xl font-bold mb-6">
               <img 
                 src={logo}
                 alt="PeakInsights Logo"
@@ -49,7 +53,7 @@ const Footer = () => {
                 className="mr-2"
               />
             </a>
-            <p className="text-gray-300 mb-6">
+            <p className="text-white mb-6">
               We Build Businesses That Cannot Be Ignored. Clarity is power. Execution is leverage. Discipline is growth.
             </p>
             <div className="flex space-x-4">
@@ -59,7 +63,7 @@ const Footer = () => {
                   href={social.href}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="w-10 h-10 bg-secondary hover:bg-accent rounded-full flex items-center justify-center transition-colors duration-300"
+                  className="w-10 h-10 bg-[#1F4FA3] hover:bg-accent rounded-full flex items-center justify-center transition-colors duration-300"
                   aria-label={social.label}
                 >
                   {social.icon}
@@ -76,7 +80,7 @@ const Footer = () => {
                 <li key={index}>
                   <a
                     href={link.href}
-                    className="text-gray-300 hover:text-highlight transition-colors duration-300 flex items-center"
+                    className="text-white hover:text-highlight transition-colors duration-300 flex items-center"
                   >
                     <FaArrowUp className="transform -rotate-45 mr-2 text-sm" />
                     {link.label}
@@ -94,7 +98,7 @@ const Footer = () => {
                 <li key={index}>
                   <a
                     href={link.href}
-                    className="text-gray-300 hover:text-highlight transition-colors duration-300"
+                    className="text-white hover:text-highlight transition-colors duration-300"
                   >
                     {link.label}
                   </a>
@@ -112,7 +116,7 @@ const Footer = () => {
                   <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z" />
                   <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M15 11a3 3 0 11-6 0 3 3 0 016 0z" />
                 </svg>
-                <span className="text-gray-300">
+                <span className="text-white">
                   Golden Mango Heights, 9th Floor<br />
                   Wood Avenue, Nairobi
                 </span>
@@ -121,7 +125,7 @@ const Footer = () => {
                 <svg className="w-5 h-5 text-highlight mr-3" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                   <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z" />
                 </svg>
-                <span className="text-gray-300">
+                <span className="text-white">
                   0725 228 572<br />
                   0736 105 920
                 </span>
@@ -144,7 +148,7 @@ const Footer = () => {
                 {/* Navigate to contact section when clicked */}
                 <button
                   onClick={goToContact}
-                  className="text-gray-300 hover:text-highlight transition-colors"
+                  className="text-white hover:text-highlight transition-colors"
                 >
                   advisory@peak-insights.com
                 </button>
@@ -155,29 +159,17 @@ const Footer = () => {
       </div>
 
       {/* Bottom Section */}
-      <div className="border-t border-gray-800">
+<div className="border-t border-gray-800">
         <div className="container mx-auto px-6 py-6">
           <div className="flex flex-col md:flex-row justify-between items-center">
-            <p className="text-gray-400 text-sm mb-4 md:mb-0">
+            <p className="text-white text-sm mb-4 md:mb-0">
               &copy; {new Date().getFullYear()} PeakInsights Advisory. All rights reserved.
             </p>
-            
-            <div className="flex items-center">
-              <button
-                onClick={scrollToTop}
-                className="flex items-center text-sm text-gray-400 hover:text-highlight transition-colors duration-300"
-              >
-                Back to top
-                <svg className="w-4 h-4 ml-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 10l7-7m0 0l7 7m-7-7v18" />
-                </svg>
-              </button>
-            </div>
           </div>
           
-          <div className="mt-4 text-center">
-            <p className="text-gray-500 text-sm">
-              Built for leaders who refuse to plateau. Your Partner in Growth.
+          <div className="mt-4 flex justify-center">
+            <p className="text-white text-base font-semibold w-4/5 leading-relaxed tracking-wide text-center">
+              Built for leaders who refuse to plateau.
             </p>
           </div>
         </div>

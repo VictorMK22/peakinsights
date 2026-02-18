@@ -54,7 +54,7 @@ html {
   }
   to {
     opacity: 1;
-    transform: translateY(0);
+    transform: translateY(-6px);
   }
 }
 
@@ -65,6 +65,12 @@ html {
   -webkit-text-fill-color: transparent;
   background-clip: text;
 }
+
+.lift {
+  transform: translateY(-6px);
+  box-shadow: 0 12px 30px rgba(0, 0, 0, 0.12);
+}
+
 
 /* Card hover effects */
 .hover-lift {

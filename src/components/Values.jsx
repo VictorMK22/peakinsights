@@ -44,7 +44,7 @@ const Values = () => {
           <h2 className="text-4xl md:text-5xl font-bold mb-6 text-primary">
             What Drives Us
           </h2>
-          <p className="text-xl text-gray-600 max-w-3xl mx-auto">
+          <p className="text-xl text-gray-900 max-w-3xl mx-auto">
             Our core values guide every engagement and decision we make
           </p>
         </div>
@@ -53,7 +53,7 @@ const Values = () => {
           {values.map((value, index) => (
             <div
               key={index}
-              className="group bg-gray-50 rounded-2xl p-8 text-center hover-lift transition-all duration-300 animate-fade-in"
+              className="group bg-white rounded-2xl p-8 text-center lift hover-lift transition-all duration-300 animate-fade-in"
               style={{ animationDelay: `${index * 0.1}s` }}
             >
               <div
@@ -62,16 +62,15 @@ const Values = () => {
                 {value.icon}
               </div>
               <h3 className="text-xl font-bold mb-3 text-primary">{value.title}</h3>
-              <p className="text-gray-600">{value.description}</p>
+              <p className="text-gray-900">{value.description}</p>
             </div>
           ))}
         </div>
 
         {/* Promise Section */}
         <div className="max-w-4xl mx-auto">
-          <div className="bg-gradient-to-r from-primary to-secondary rounded-2xl p-8 md:p-12 text-white">
+          <div className="bg-gradient-to-br from-[#0F2A5F] to-[#1F4FA3] rounded-2xl p-8 md:p-12 text-white">
             <h3 className="text-3xl font-bold mb-8 text-center">Our Promise</h3>
-            
             <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
               {/* We Will Not */}
               <div className="bg-white/10 backdrop-blur-sm rounded-xl p-6">
@@ -81,19 +80,19 @@ const Values = () => {
                       <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M6 18L18 6M6 6l12 12" />
                     </svg>
                   </div>
-                  <h4 className="text-xl font-bold">We will not:</h4>
+                  <h4 className="text-xl font-extrabold">We will not:</h4>
                 </div>
                 <ul className="space-y-4">
                   <li className="flex items-center">
-                    <div className="w-2 h-2 bg-red-400 rounded-full mr-3"></div>
+                    <div className="w-2 h-2 bg-red-400 font-bold rounded-full mr-3"></div>
                     Sugarcoat reality
                   </li>
                   <li className="flex items-center">
-                    <div className="w-2 h-2 bg-red-400 rounded-full mr-3"></div>
+                    <div className="w-2 h-2 bg-red-400 font-bold rounded-full mr-3"></div>
                     Hide behind jargon
                   </li>
                   <li className="flex items-center">
-                    <div className="w-2 h-2 bg-red-400 rounded-full mr-3"></div>
+                    <div className="w-2 h-2 bg-red-400 font-bold rounded-full mr-3"></div>
                     Disappear after a presentation
                   </li>
                 </ul>
@@ -107,23 +106,23 @@ const Values = () => {
                       <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 13l4 4L19 7" />
                     </svg>
                   </div>
-                  <h4 className="text-xl font-bold">We will:</h4>
+                  <h4 className="text-xl font-extrabold">We will:</h4>
                 </div>
                 <ul className="space-y-4">
                   <li className="flex items-center">
-                    <div className="w-2 h-2 bg-green-400 rounded-full mr-3"></div>
+                    <div className="w-2 h-2 bg-green-400 font-bold rounded-full mr-3"></div>
                     Tell you the truth
                   </li>
                   <li className="flex items-center">
-                    <div className="w-2 h-2 bg-green-400 rounded-full mr-3"></div>
+                    <div className="w-2 h-2 bg-green-400 font-bold rounded-full mr-3"></div>
                     Bring structure where there is confusion
                   </li>
                   <li className="flex items-center">
-                    <div className="w-2 h-2 bg-green-400 rounded-full mr-3"></div>
+                    <div className="w-2 h-2 bg-green-400 font-bold rounded-full mr-3"></div>
                     Build systems that outlast us
                   </li>
                   <li className="flex items-center">
-                    <div className="w-2 h-2 bg-green-400 rounded-full mr-3"></div>
+                    <div className="w-2 h-2 bg-green-400 font-bold rounded-full mr-3"></div>
                     Partner with you step by step
                   </li>
                 </ul>
@@ -131,7 +130,7 @@ const Values = () => {
             </div>
 
             <div className="mt-10 pt-8 border-t border-white/20">
-              <p className="text-center text-xl italic">
+              <p className="text-center text-xl font-bold italic">
                 Because real transformation is not advice. It is discipline, decisions and follow-through.
               </p>
             </div>

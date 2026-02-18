@@ -1,16 +1,12 @@
 import { useState, useEffect } from 'react'
-import Header from './components/Header'
-import Hero from './components/Hero'
-import About from './components/About'
-import Problem from './components/Problem'
-import Services from './components/Services'
-import TrackRecord from './components/TrackRecord'
-import Values from './components/Values'
-import Leadership from './components/Leadership'
-import Contact from './components/Contact'          // Basic contact info
-// import AdvisorForm from './components/AdvisorForm' // Talk to advisor form
-import Footer from './components/Footer'
+import { BrowserRouter, Routes, Route } from 'react-router-dom'
+import Home from './pages/Home'
+import BlogList from './pages/BlogList'
+import BlogPost from './pages/BlogPost'
 import ScrollToTop from './components/ScrollToTop'
+import DiagnosticFlow from "./pages/DiagnosticFlow";
+import Results from './pages/results'
+import Landing from './pages/Landing'
 
 function App() {
   const [isLoading, setIsLoading] = useState(true)
@@ -35,22 +31,18 @@ function App() {
   }
 
   return (
-    <div className="min-h-screen bg-white">
-      <Header />
-      <main>
-        <Hero />
-        <About />
-        <Problem />
-        <Services />
-        <TrackRecord />
-        <Values />
-        <Leadership />
-        <Contact />        {/* Basic contact information */}
-        {/* <AdvisorForm />    Talk to advisor form */}
-      </main>
-      <Footer />
-      <ScrollToTop />
-    </div>
+      <>
+        <ScrollToTop />
+        <Routes>
+          <Route path="/" element={<Home />} />
+          <Route path="/blog" element={<BlogList />} />
+          <Route path="/blog/category/:slug" element={<BlogList />} />
+          <Route path="/blog/:slug" element={<BlogPost />} />
+          <Route path="/diagnostic" element={<DiagnosticFlow />} />
+          <Route path="/landing" element={<Landing />} />
+          <Route path='/results' element={<Results />} />
+        </Routes>
+    </>
   )
 }
 

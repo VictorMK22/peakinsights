@@ -105,11 +105,11 @@ const Contact = () => {
               <div className="space-y-6">
                 {/* Phone */}
                 <div className="flex items-start gap-4 group">
-                  <div className="flex-shrink-0 w-12 h-12 bg-primary rounded-lg flex items-center justify-center group-hover:bg-accent transition-colors duration-300">
+                  <div className="flex-shrink-0 w-12 h-12 bg-[#1F4FA3] rounded-lg flex items-center justify-center group-hover:bg-accent transition-colors duration-300">
                     <FaPhone className="text-white text-lg" />
                   </div>
                   <div>
-                    <h4 className="font-semibold text-primary mb-2">Phone</h4>
+                    <h4 className="font-bold text-primary mb-2">Phone</h4>
                     <a href="tel:0725228572" className="text-accent hover:text-primary transition-colors block">
                       0725 228 572
                     </a>
@@ -121,11 +121,11 @@ const Contact = () => {
 
                 {/* Email */}
                 <div className="flex items-start gap-4 group">
-                  <div className="flex-shrink-0 w-12 h-12 bg-primary rounded-lg flex items-center justify-center group-hover:bg-accent transition-colors duration-300">
+                  <div className="flex-shrink-0 w-12 h-12 bg-[#1F4FA3] rounded-lg flex items-center justify-center group-hover:bg-accent transition-colors duration-300">
                     <FaEnvelope className="text-white text-lg" />
                   </div>
                   <div>
-                    <h4 className="font-semibold text-primary mb-2">Email</h4>
+                    <h4 className="font-bold text-primary mb-2">Email</h4>
                     <button
                       onClick={copyEmail}
                       className="text-accent hover:text-primary transition-colors flex items-center gap-2 text-left"
@@ -143,11 +143,11 @@ const Contact = () => {
 
                 {/* Location */}
                 <div className="flex items-start gap-4 group">
-                  <div className="flex-shrink-0 w-12 h-12 bg-primary rounded-lg flex items-center justify-center group-hover:bg-accent transition-colors duration-300">
+                  <div className="flex-shrink-0 w-12 h-12 bg-[#1F4FA3] rounded-lg flex items-center justify-center group-hover:bg-accent transition-colors duration-300">
                     <FaMapMarkerAlt className="text-white text-lg" />
                   </div>
                   <div>
-                    <h4 className="font-semibold text-primary mb-2">Office</h4>
+                    <h4 className="font-bold text-primary mb-2">Office</h4>
                     <p className="text-accent">
                       Golden Mango Heights, 9th Floor<br />
                       Wood Avenue, Nairobi
@@ -177,7 +177,7 @@ const Contact = () => {
                       onChange={handleChange}
                       required
                       className="w-full px-4 py-3 rounded-lg border-2 border-light focus:border-accent focus:outline-none transition-colors bg-gray-light"
-                      placeholder="John Doe"
+                      placeholder="Full Name"
                     />
                   </div>
                   
@@ -192,7 +192,7 @@ const Contact = () => {
                       onChange={handleChange}
                       required
                       className="w-full px-4 py-3 rounded-lg border-2 border-light focus:border-accent focus:outline-none transition-colors bg-gray-light"
-                      placeholder="john@example.com"
+                      placeholder="name@example.com"
                     />
                   </div>
                 </div>
@@ -242,32 +242,34 @@ const Contact = () => {
                   ></textarea>
                 </div>
                 
-                <button
-                  type="submit"
-                  disabled={submitted || isSubmitting}
-                  className={`w-full py-4 rounded-lg font-semibold text-lg transition-all duration-300 flex items-center justify-center gap-3 ${
-                    submitted
-                      ? 'bg-green-600 text-white'
-                      : 'bg-primary text-white hover:bg-accent hover:shadow-lg'
-                  } ${isSubmitting ? 'opacity-70 cursor-not-allowed' : ''}`}
-                >
-                  {submitted ? (
-                    <>
-                      <FaCheckCircle className="text-xl" />
-                      Message Sent Successfully!
-                    </>
-                  ) : isSubmitting ? (
-                    <>
-                      <div className="w-5 h-5 border-2 border-white border-t-transparent rounded-full animate-spin"></div>
-                      Sending...
-                    </>
-                  ) : (
-                    <>
-                      <FaPaperPlane />
-                      Send Message
-                    </>
-                  )}
-                </button>
+                <div className='flex items-center justify-center'>
+                  <button
+                    type="submit"
+                    disabled={submitted || isSubmitting}
+                    className={`w-[50%] py-3 rounded-lg font-semibold text-lg transition-all duration-300 flex items-center justify-center gap-3 ${
+                      submitted
+                        ? 'bg-green-600 text-white'
+                        : 'bg-[#1F4FA3] text-white hover:bg-[#0F2A5F] hover:shadow-lg'
+                    } ${isSubmitting ? 'opacity-70 cursor-not-allowed' : ''}`}
+                  >
+                    {submitted ? (
+                      <>
+                        <FaCheckCircle className="text-xl" />
+                        Message Sent Successfully!
+                      </>
+                    ) : isSubmitting ? (
+                      <>
+                        <div className="w-5 h-5 border-2 border-white border-t-transparent rounded-full animate-spin"></div>
+                        Sending...
+                      </>
+                    ) : (
+                      <>
+                        <FaPaperPlane />
+                        Send Message
+                      </>
+                    )}
+                  </button>
+                </div>
               </form>
             </div>
           </div>

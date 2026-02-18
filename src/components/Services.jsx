@@ -18,11 +18,11 @@ const Services = () => {
         'Financial literacy & decision-making training for teams',
       ],
       outcome: 'We turn finance from a rear-view mirror into a navigation system.',
-      color: 'from-blue-600 to-cyan-600',
+      color: 'from-[#0F2A5F] to-[#1F4FA3]',
     },
     {
       icon: <FaRocket className="text-4xl" />,
-      title: 'Growth & Transformation Advisory',
+      title: 'Transformation Advisory',
       subtitle: 'Strategy That Actually Gets Executed',
       tagline: 'Re-imagined strategy consulting for modern business.',
       description: 'We partner with organizations ready to break through stagnation and execute bold transformation.',
@@ -35,12 +35,12 @@ const Services = () => {
         'Leadership development & culture transformation',
       ],
       outcome: 'Transformation is uncomfortable. We bring structure, courage and momentum.',
-      color: 'from-purple-600 to-pink-600',
+      color: 'from-[#0F2A5F] to-[#1F4FA3]',
     },
     {
       icon: <FaUsers className="text-4xl" />,
       title: 'Family Business Advisory',
-      subtitle: 'Building Businesses That Survive Generations',
+      subtitle: 'Enduring Businesses. Lasting Impact',
       tagline: 'Transforming family enterprises into lasting legacies.',
       description: 'Family businesses are powerful and fragile. They don\'t collapse because of markets.',
       features: [
@@ -52,7 +52,7 @@ const Services = () => {
         'Next-generation leadership development',
       ],
       outcome: 'Our goal is simple: Protect the family, strengthen the business and preserve the legacy.',
-      color: 'from-green-600 to-emerald-600',
+      color: 'from-[#0F2A5F] to-[#1F4FA3]',
     },
   ]
 
@@ -66,7 +66,7 @@ const Services = () => {
           <h2 className="text-4xl md:text-5xl font-bold mb-6 text-primary">
             Our Advisory Services
           </h2>
-          <p className="text-xl text-gray-600 max-w-3xl mx-auto">
+          <p className="text-xl text-gray-900 max-w-3xl mx-auto">
             We don't give advice. We build systems, discipline and leadership that win; today and for decades.
           </p>
         </div>
@@ -94,8 +94,8 @@ const Services = () => {
               {/* Body */}
               <div className="p-8">
                 <div className="mb-6">
-                  <p className="font-bold text-lg text-gray-800 mb-4">{service.tagline}</p>
-                  <p className="text-gray-600 mb-6">{service.description}</p>
+                  <p className="font-bold text-lg text-black mb-4">{service.tagline}</p>
+                  <p className="text-gray-800 text-base mb-6">{service.description}</p>
                 </div>
 
                 <div className="mb-6">
@@ -111,51 +111,18 @@ const Services = () => {
                         >
                           <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 13l4 4L19 7" />
                         </svg>
-                        <span className="text-gray-700">{feature}</span>
+                        <span className="text-gray-800 ">{feature}</span>
                       </li>
                     ))}
                   </ul>
                 </div>
 
                 <div className="p-4 bg-gray-50 rounded-xl">
-                  <p className="text-gray-700 font-medium italic">{service.outcome}</p>
+                  <p className="text-gray-800 font-bold italic">{service.outcome}</p>
                 </div>
               </div>
-
-              {/* Footer */}
-              {/* <div className="px-8 pb-8">
-                <a
-                  href="#contact"
-                  className="block w-full text-center bg-gray-100 hover:bg-accent hover:text-white text-gray-800 font-semibold py-3 rounded-lg transition-all duration-300 group-hover:scale-105"
-                >
-                  Learn More
-                </a>
-              </div> */}
             </div>
           ))}
-        </div>
-
-        {/* Bottom CTA */}
-        <div className="mt-20 text-center">
-          <div className="inline-block bg-gradient-to-r from-primary to-accent p-1 rounded-2xl">
-            <div className="bg-white rounded-xl p-8 md:p-12">
-              <h3 className="text-2xl md:text-3xl font-bold mb-6 text-primary">
-                PeakInsights is not for everyone.
-              </h3>
-              <p className="text-xl text-gray-600 mb-8 max-w-2xl mx-auto">
-                It is for leaders who want to build businesses that scale, endure and dominate.
-              </p>
-              <a
-                href="#contact"
-                className="inline-flex items-center bg-gradient-to-r from-accent to-primary text-white px-8 py-4 rounded-full font-semibold text-lg hover:shadow-xl transition-all duration-300 hover:scale-105"
-              >
-                Contact Us
-                <svg className="w-5 h-5 ml-3" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17 8l4 4m0 0l-4 4m4-4H3" />
-                </svg>
-              </a>
-            </div>
-          </div>
         </div>
       </div>
     </section>

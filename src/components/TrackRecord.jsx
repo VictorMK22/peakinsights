@@ -37,7 +37,7 @@ const TrackRecord = () => {
   ]
 
   return (
-    <section className="py-20 bg-gradient-to-br from-primary to-secondary relative overflow-hidden">
+    <section className="py-20 bg-gradient-to-br from-[#0F2A5F] to-[#1F4FA3] relative overflow-hidden">
       {/* Background Pattern */}
       <div className="absolute inset-0 opacity-10">
         <div className="absolute top-0 left-0 w-64 h-64 bg-white rounded-full -translate-x-32 -translate-y-32"></div>
@@ -46,13 +46,13 @@ const TrackRecord = () => {
 
       <div className="container mx-auto px-6 relative z-10">
         <div className="text-center mb-16">
-          <span className="inline-block px-4 py-2 bg-white/20 text-white rounded-full font-semibold mb-4">
+          <span className="inline-block px-4 py-2 bg-white/20 text-white rounded-full font-bold mb-4">
             Our Impact
           </span>
           <h2 className="text-4xl md:text-5xl font-bold mb-6 text-white">
             Our Track Record
           </h2>
-          <p className="text-xl text-white/90 max-w-3xl mx-auto">
+          <p className="text-xl text-white/90 font-bold max-w-3xl mx-auto">
             We are anchored in Kenya — but our impact spans Africa.
           </p>
         </div>
@@ -69,8 +69,8 @@ const TrackRecord = () => {
                 {stat.icon}
               </div>
               <div className="text-5xl font-bold text-white mb-2">{stat.value}</div>
-              <div className="text-xl font-semibold text-white mb-2">{stat.label}</div>
-              <div className="text-white/80">{stat.description}</div>
+              <div className="text-xl font-bold text-white mb-2">{stat.label}</div>
+              <div className="text-white/80 font-bold">{stat.description}</div>
             </div>
           ))}
         </div>
@@ -96,7 +96,7 @@ const TrackRecord = () => {
                   ].map((item, index) => (
                     <div key={index} className="flex items-center p-4 bg-white/5 rounded-xl">
                       <span className="text-2xl mr-4">{item.icon}</span>
-                      <span className="text-lg text-white">{item.title}</span>
+                      <span className="text-lg text-white font-bold">{item.title}</span>
                     </div>
                   ))}
                 </div>
@@ -106,7 +106,7 @@ const TrackRecord = () => {
 
           {/* Bottom Quote */}
           <div className="mt-12 text-center">
-            <p className="text-2xl italic text-white/90 mb-6">
+            <p className="text-2xl italic text-white/90 font-bold mb-6">
               "These numbers didn't come from luck. They came from repeating one thing relentlessly:"
             </p>
             <div className="inline-block bg-gradient-to-r from-accent to-highlight p-1 rounded-full">
