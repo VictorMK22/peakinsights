@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import { useNavigate } from "react-router-dom";
 import { sendAdvisoryEmail } from "../diagnostic/email";
 import Footer from "../components/Footer";
@@ -29,36 +29,56 @@ export default function Booking() {
 
   const today = new Date().toISOString().split("T")[0];
 
+  useEffect(() => {
+    if (status === "success") {
+      const timer = setTimeout(() => setStatus("idle"), 5000);
+      return () => clearTimeout(timer);
+    }
+  }, [status]);
+
   const timeSlots = [
     "09:00 AM", "10:00 AM", "11:00 AM",
     "12:00 PM", "02:00 PM", "03:00 PM", "04:00 PM",
   ];
+
+  const phoneValid = /^\+254\d{9}$/.test(form.phone.replace(/\s/g, ""));
 
   const isValid =
     form.name.trim() &&
     form.email.trim() &&
     form.company.trim() &&
     form.phone.trim() &&
+    phoneValid &&
     form.date &&
     form.time;
 
   // ── EmailJS booking ──────────────────────────────────────────
   const handleEmailBook = async () => {
-    if (!isValid) return alert("Please fill in all fields.");
-
+    if (status === "sending") return;
+  
+    if (!isValid) {
+      if (!phoneValid) {
+        return alert("Please enter a valid phone number in format +254XXXXXXXXX");
+      }
+      return alert("Please fill in all fields.");
+    }
+  
     setStatus("sending");
-
+  
     try {
       await sendAdvisoryEmail({
         name: form.name,
         email: form.email,
         company: form.company,
         phone: form.phone,
-        score: `${score}% — Preferred session: ${form.date} at ${form.time}`,
+        score: score,
+        preferred_date: form.date,
+        preferred_time: form.time,
         classification: result?.title || "",
         summary: result?.summary || "",
         sections: result?.sections || {},
       });
+  
       setStatus("success");
     } catch (err) {
       console.error("EmailJS error:", err);
@@ -72,9 +92,10 @@ export default function Booking() {
       `Hi PeakInsights! I'd like to book a Value Discovery Session.\n\n` +
       `Name: ${form.name}\nEmail: ${form.email}\nCompany: ${form.company}\nPhone: ${form.phone}\n` +
       `Preferred Date: ${form.date}\nPreferred Time: ${form.time}\n` +
-      `Business Score: ${score}%${result ? ` (${result.title})` : ""}`
+      `Business Score: ${score}%${result ? ` (${result.title})` : ""}` +
+      `Summary: ${result?.summary || ""}`
     );
-    return `https://wa.me/254795703599?text=${message}`;
+    return `https://wa.me/25473610520?text=${message}`;
   };
 
   const handleWhatsAppBook = () => {

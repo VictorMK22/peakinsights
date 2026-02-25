@@ -7,7 +7,7 @@ import ScrollToTop from './components/ScrollToTop'
 import DiagnosticFlow from "./pages/DiagnosticFlow"
 import Results from './pages/results'
 import Landing from './pages/Landing'
-import Booking from './pages/Booking'
+import Booking from './pages/booking'
 
 function App() {
   const [isLoading, setIsLoading] = useState(true)

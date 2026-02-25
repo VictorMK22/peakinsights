@@ -2,17 +2,19 @@ import emailjs from "@emailjs/browser";
 
 export function sendAdvisoryEmail(payload) {
   return emailjs.send(
-    "SERVICE_ID",
-    "TEMPLATE_ID",
+    import.meta.env.VITE_EMAILJS_SERVICE_ID,
+    import.meta.env.VITE_EMAILJS_ADVISORY_TEMPLATE_ID,
     {
       // Lead info
-      user_name: payload.name,
-      user_email: payload.email,
+      name: payload.name,
+      email: payload.email,
       company: payload.company,
       phone: payload.phone,
 
       // Diagnostic core
       score: payload.score,
+      preferred_date: payload.preferred_date,
+      preferred_time: payload.preferred_time,
       classification: payload.classification,
       summary: payload.summary,
 
@@ -21,6 +23,6 @@ export function sendAdvisoryEmail(payload) {
       importance: payload.sections?.importance?.join("\n• "),
       next_steps: payload.sections?.nextSteps?.join("\n• ")
     },
-    "PUBLIC_KEY"
+    import.meta.env.VITE_EMAILJS_PUBLIC_KEY
   );
 }
