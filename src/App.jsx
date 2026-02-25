@@ -4,9 +4,10 @@ import Home from './pages/Home'
 import BlogList from './pages/BlogList'
 import BlogPost from './pages/BlogPost'
 import ScrollToTop from './components/ScrollToTop'
-import DiagnosticFlow from "./pages/DiagnosticFlow";
+import DiagnosticFlow from "./pages/DiagnosticFlow"
 import Results from './pages/results'
 import Landing from './pages/Landing'
+import Booking from './pages/Booking'
 
 function App() {
   const [isLoading, setIsLoading] = useState(true)
@@ -38,9 +39,10 @@ function App() {
           <Route path="/blog" element={<BlogList />} />
           <Route path="/blog/category/:slug" element={<BlogList />} />
           <Route path="/blog/:slug" element={<BlogPost />} />
-          <Route path="/diagnostic" element={<DiagnosticFlow />} />
           <Route path="/landing" element={<Landing />} />
+          <Route path="/diagnostic" element={<DiagnosticFlow />} />
           <Route path='/results' element={<Results />} />
+          <Route path="/booking" element={<Booking />} />
         </Routes>
     </>
   )
