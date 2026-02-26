@@ -14,6 +14,10 @@ export const CATEGORIES = {
     finance: {
       id: 5,
       label: "Finance"
+    },
+    audit: {
+      id: 8,
+      label: "Audit"
     }
   }
   

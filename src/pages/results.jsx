@@ -46,7 +46,7 @@ export default function Results() {
                 Ready to take the next step?
               </h2>
               <p className="text-gray-500 text-sm mb-6">
-                Book a free Value Discovery Session with our advisory team.
+                Book a free Business Health Advisory Session with our advisory team.
               </p>
 
               <button

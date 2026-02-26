@@ -128,7 +128,7 @@ export default function Booking() {
             {/* Status banners */}
             {status === "success" && (
               <div className="bg-green-50 border border-green-200 text-green-700 rounded-xl p-4 mb-6">
-                ✅ Booking confirmed! Check your inbox — we'll be in touch within 24 hours.
+                ✅ Booking confirmed! — we'll be in touch within 24 hours.
               </div>
             )}
             {status === "error" && (
