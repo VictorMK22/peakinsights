@@ -1,4 +1,4 @@
-import { FaBan, FaBullseye, FaUnlock } from 'react-icons/fa'
+import { Ban, Target, Unlock } from 'lucide-react'
 
 const About = () => {
   const fixes = [
@@ -11,19 +11,19 @@ const About = () => {
 
   const cards = [
     {
-      icon: <FaBan className="text-3xl" />,
+      icon: <Ban className="w-8 h-8" strokeWidth={2.5} />,
       title: 'We Fix What Limits Growth',
       content: fixes,
       color: 'from-red-500 to-orange-500',
     },
     {
-      icon: <FaBullseye className="text-3xl" />,
+      icon: <Target className="w-8 h-8" strokeWidth={2.5} />,
       title: 'Our Vision',
       content: 'Business partner of choice, powered by world-class advisors.',
       color: 'from-blue-500 to-cyan-500',
     },
     {
-      icon: <FaUnlock className="text-3xl" />,
+      icon: <Unlock className="w-8 h-8" strokeWidth={2.5} />,
       title: 'Our Mission',
       content: 'We unlock the potential of businesses by helping them create value so that they can thrive - for good.',
       color: 'from-green-500 to-emerald-500',

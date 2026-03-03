@@ -1,4 +1,4 @@
-import { FaMountain, FaFacebook, FaTwitter, FaLinkedin, FaYoutube, FaArrowUp } from 'react-icons/fa'
+import { Facebook, Twitter, Linkedin, Youtube, ArrowUp } from 'lucide-react'
 import logo from "/src/assets/Logo.jpg"
 import { useNavigate, useLocation } from "react-router-dom"
 
@@ -20,10 +20,10 @@ const Footer = () => {
   ]
 
   const socialLinks = [
-    { icon: <FaTwitter />, href: 'https://twitter.com/PeakInsightsKE', label: 'Twitter' },
-    { icon: <FaYoutube />, href: 'https://youtube.com/@PeakInsightsKE', label: 'YouTube' },
-    { icon: <FaFacebook />, href: 'https://facebook.com/PeakInsightsKE', label: 'Facebook' },
-    { icon: <FaLinkedin />, href: 'https://linkedin.com/company/PeakInsightsKE', label: 'LinkedIn' },
+    { icon: <Twitter className="w-5 h-5" strokeWidth={2.5} />, href: 'https://twitter.com/PeakInsightsKE', label: 'Twitter' },
+    { icon: <Youtube className="w-5 h-5" strokeWidth={2.5} />, href: 'https://youtube.com/@PeakInsightsKE', label: 'YouTube' },
+    { icon: <Facebook className="w-5 h-5" strokeWidth={2.5} />, href: 'https://facebook.com/PeakInsightsKE', label: 'Facebook' },
+    { icon: <Linkedin className="w-5 h-5" strokeWidth={2.5} />, href: 'https://linkedin.com/company/PeakInsightsKE', label: 'LinkedIn' },
   ]
 
   const goToContact = () => {
@@ -82,7 +82,7 @@ const Footer = () => {
                     href={link.href}
                     className="text-white hover:text-highlight transition-colors duration-300 flex items-center"
                   >
-                    <FaArrowUp className="transform -rotate-45 mr-2 text-sm" />
+                    <ArrowUp className="transform -rotate-45 mr-2 w-4 h-4" strokeWidth={2.5} />
                     {link.label}
                   </a>
                 </li>

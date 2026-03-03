@@ -1,12 +1,12 @@
 import { useState } from 'react'
 import emailjs from '@emailjs/browser'
 import { 
-  FaPhone, 
-  FaEnvelope, 
-  FaMapMarkerAlt,
-  FaPaperPlane,
-  FaCheckCircle
-} from 'react-icons/fa'
+  Phone, 
+  Mail, 
+  MapPin,
+  Send,
+  CheckCircle
+} from 'lucide-react'
 
 const Contact = () => {
   const [formData, setFormData] = useState({
@@ -106,7 +106,7 @@ const Contact = () => {
                 {/* Phone */}
                 <div className="flex items-start gap-4 group">
                   <div className="flex-shrink-0 w-12 h-12 bg-[#1F4FA3] rounded-lg flex items-center justify-center group-hover:bg-accent transition-colors duration-300">
-                    <FaPhone className="text-white text-lg" />
+                    <Phone className="text-white w-8 h-8" strokeWidth={2.5} />
                   </div>
                   <div>
                     <h4 className="font-bold text-primary mb-2">Phone</h4>
@@ -122,7 +122,7 @@ const Contact = () => {
                 {/* Email */}
                 <div className="flex items-start gap-4 group">
                   <div className="flex-shrink-0 w-12 h-12 bg-[#1F4FA3] rounded-lg flex items-center justify-center group-hover:bg-accent transition-colors duration-300">
-                    <FaEnvelope className="text-white text-lg" />
+                    <Mail className="text-white w-8 h-8" strokeWidth={2.5} />
                   </div>
                   <div>
                     <h4 className="font-bold text-primary mb-2">Email</h4>
@@ -144,7 +144,7 @@ const Contact = () => {
                 {/* Location */}
                 <div className="flex items-start gap-4 group">
                   <div className="flex-shrink-0 w-12 h-12 bg-[#1F4FA3] rounded-lg flex items-center justify-center group-hover:bg-accent transition-colors duration-300">
-                    <FaMapMarkerAlt className="text-white text-lg" />
+                    <MapPin className="text-white w-8 h-8" strokeWidth={2.5} />
                   </div>
                   <div>
                     <h4 className="font-bold text-primary mb-2">Office</h4>
@@ -254,7 +254,7 @@ const Contact = () => {
                   >
                     {submitted ? (
                       <>
-                        <FaCheckCircle className="text-xl" />
+                        <CheckCircle className="w-8 h-8" strokeWidth={2.5} />
                         Message Sent Successfully!
                       </>
                     ) : isSubmitting ? (
@@ -264,7 +264,7 @@ const Contact = () => {
                       </>
                     ) : (
                       <>
-                        <FaPaperPlane />
+                        <Send />
                         Send Message
                       </>
                     )}

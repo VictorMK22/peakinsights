@@ -1,9 +1,9 @@
-import { FaDollarSign, FaRocket, FaUsers } from 'react-icons/fa'
+import { DollarSign, Rocket, Users } from 'lucide-react'
 
 const Services = () => {
   const services = [
     {
-      icon: <FaDollarSign className="text-4xl" />,
+      icon: <DollarSign className="w-9 h-9" strokeWidth={2.5} />,
       title: 'Fractional CFO',
       subtitle: 'Financial Leadership Without Compromise',
       tagline: 'Your full-time CFO; at a fraction of the cost.',
@@ -21,7 +21,7 @@ const Services = () => {
       color: 'from-[#0F2A5F] to-[#1F4FA3]',
     },
     {
-      icon: <FaRocket className="text-4xl" />,
+      icon: <Rocket className="w-9 h-9" strokeWidth={2.5} />,
       title: 'Transformation Advisory',
       subtitle: 'Strategy That Actually Gets Executed',
       tagline: 'Re-imagined strategy consulting for modern business.',
@@ -38,7 +38,7 @@ const Services = () => {
       color: 'from-[#0F2A5F] to-[#1F4FA3]',
     },
     {
-      icon: <FaUsers className="text-4xl" />,
+      icon: <Users className="w-9 h-9" strokeWidth={2.5}  />,
       title: 'Family Business Advisory',
       subtitle: 'Enduring Businesses. Lasting Impact',
       tagline: 'Transforming family enterprises into lasting legacies.',

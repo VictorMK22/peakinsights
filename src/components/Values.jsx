@@ -1,33 +1,33 @@
-import { FaFlag, FaHandshake, FaUsers, FaMedal, FaBullseye } from 'react-icons/fa'
+import { Flag, Handshake, Users, Medal, Target, X, Check } from 'lucide-react'
 
 const Values = () => {
   const values = [
     {
-      icon: <FaFlag className="text-3xl" />,
+      icon: <Flag className="w-8 h-8" strokeWidth={2.5} />,
       title: 'Leadership',
       description: 'We set the standard.',
       color: 'from-red-500 to-orange-500',
     },
     {
-      icon: <FaHandshake className="text-3xl" />,
+      icon: <Handshake className="w-8 h-8" strokeWidth={2.5} />,
       title: 'Integrity',
       description: 'We do what we say. Always.',
       color: 'from-blue-500 to-cyan-500',
     },
     {
-      icon: <FaUsers className="text-3xl" />,
+      icon: <Users className="w-8 h-8" strokeWidth={2.5} />,
       title: 'Teamwork',
       description: 'Together, we win.',
       color: 'from-green-500 to-emerald-500',
     },
     {
-      icon: <FaMedal className="text-3xl" />,
+      icon: <Medal className="w-8 h-8" strokeWidth={2.5} />,
       title: 'Excellence',
       description: 'The best or nothing.',
       color: 'from-purple-500 to-pink-500',
     },
     {
-      icon: <FaBullseye className="text-3xl" />,
+      icon: <Target className="w-8 h-8" strokeWidth={2.5} />,
       title: 'Commitment',
       description: 'We deliver results.',
       color: 'from-indigo-500 to-purple-500',
@@ -76,9 +76,7 @@ const Values = () => {
               <div className="bg-white/10 backdrop-blur-sm rounded-xl p-6">
                 <div className="flex items-center mb-6">
                   <div className="w-12 h-12 bg-red-500 rounded-full flex items-center justify-center mr-4">
-                    <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M6 18L18 6M6 6l12 12" />
-                    </svg>
+                    <X className="w-6 h-6" strokeWidth={3} />
                   </div>
                   <h4 className="text-xl font-extrabold">We will not:</h4>
                 </div>
@@ -102,9 +100,7 @@ const Values = () => {
               <div className="bg-white/10 backdrop-blur-sm rounded-xl p-6">
                 <div className="flex items-center mb-6">
                   <div className="w-12 h-12 bg-green-500 rounded-full flex items-center justify-center mr-4">
-                    <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 13l4 4L19 7" />
-                    </svg>
+                    <Check className="w-6 h-6" strokeWidth={3} />
                   </div>
                   <h4 className="text-xl font-extrabold">We will:</h4>
                 </div>

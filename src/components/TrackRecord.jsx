@@ -1,9 +1,9 @@
-import { FaChartBar, FaGlobeAfrica, FaBusinessTime, FaRocket } from 'react-icons/fa'
+import { BarChart3, Globe, Briefcase, Rocket, LineChart, Target } from 'lucide-react'
 
 const TrackRecord = () => {
   const stats = [
     {
-      icon: <FaChartBar className="text-4xl" />,
+      icon: <BarChart3 className="w-9 h-9" strokeWidth={2.5} />,
       value: '5,000+',
       label: 'Businesses Supported',
       description: 'Across African markets',
@@ -11,7 +11,7 @@ const TrackRecord = () => {
       bgColor: 'bg-blue-50',
     },
     {
-      icon: <FaGlobeAfrica className="text-4xl" />,
+      icon: <Globe className="w-9 h-9" strokeWidth={2.5} />,
       value: '$25B+',
       label: 'Economic Value Unlocked',
       description: 'In client growth and impact',
@@ -19,7 +19,7 @@ const TrackRecord = () => {
       bgColor: 'bg-green-50',
     },
     {
-      icon: <FaBusinessTime className="text-4xl" />,
+      icon: <Briefcase className="w-9 h-9" strokeWidth={2.5} />,
       value: '2X',
       label: 'Sales Growth',
       description: 'Within 30 months for clients',
@@ -27,7 +27,7 @@ const TrackRecord = () => {
       bgColor: 'bg-purple-50',
     },
     {
-      icon: <FaRocket className="text-4xl" />,
+      icon: <Rocket className="w-9 h-9" strokeWidth={2.5} />,
       value: '14+',
       label: 'Years Experience',
       description: 'Professional advisory work',
@@ -79,31 +79,44 @@ const TrackRecord = () => {
         <div className="max-w-4xl mx-auto">
           <div className="bg-white/10 backdrop-blur-sm border border-white/20 rounded-2xl p-8 md:p-12">
             <div className="flex flex-col md:flex-row items-center">
+              
+              {/* Icon + Heading */}
               <div className="md:w-1/3 mb-8 md:mb-0 md:pr-8">
                 <div className="text-center">
                   <div className="inline-flex items-center justify-center w-24 h-24 bg-white/20 rounded-full mb-4">
-                    <FaChartBar className="text-3xl text-white" />
+                    <Rocket className="w-10 h-10 text-white" strokeWidth={2.5} />
                   </div>
-                  <h4 className="text-xl font-bold text-white">When PeakInsights is in the room:</h4>
+                  <h4 className="text-xl font-bold text-white">
+                    When PeakInsights is in the room:
+                  </h4>
                 </div>
               </div>
+
+              {/* Feature List */}
               <div className="md:w-2/3">
                 <div className="space-y-6">
                   {[
-                    { title: 'Numbers become decisions', icon: '📊' },
-                    { title: 'Strategy becomes action', icon: '🎯' },
-                    { title: 'Growth becomes predictable', icon: '📈' },
+                    { title: 'Numbers become decisions', icon: <BarChart3 className='w-8 h-8' strokeWidth={2.5} /> },
+                    { title: 'Strategy becomes action', icon: <Target className='w-8 h-8' strokeWidth={2.5} /> },
+                    { title: 'Growth becomes predictable', icon: <LineChart className='w-8 h-8' strokeWidth={2.5} /> },
                   ].map((item, index) => (
-                    <div key={index} className="flex items-center p-4 bg-white/5 rounded-xl">
-                      <span className="text-2xl mr-4">{item.icon}</span>
-                      <span className="text-lg text-white font-bold">{item.title}</span>
+                    <div
+                      key={index}
+                      className="flex items-center p-4 bg-white/5 rounded-xl hover:bg-white/10 transition-colors duration-300"
+                    >
+                      <span className="mr-4 text-white">
+                        {item.icon}
+                      </span>
+                      <span className="text-lg font-bold text-white">
+                        {item.title}
+                      </span>
                     </div>
                   ))}
                 </div>
               </div>
+              
             </div>
           </div>
-
           {/* Bottom Quote */}
           <div className="mt-12 text-center">
             <p className="text-2xl italic text-white/90 font-bold mb-6">

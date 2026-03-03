@@ -1,4 +1,4 @@
-import { FaLinkedin, FaTwitter } from 'react-icons/fa'
+import { Linkedin, Twitter, Briefcase, Slash, Lightbulb, Target, Clock } from 'lucide-react'
 import NixonImage from '../assets/leadership/nixon.jpeg';
 import LewisImage from '../assets/leadership/lewis.jpg';
 import EmmanuelImage from '../assets/leadership/emmanuel.jpeg';
@@ -90,7 +90,7 @@ He holds a Bachelor’s degree in Commerce (Accounting) from Meru University of 
                         />
                       ) : (
                         <div className="w-full h-full bg-gradient-to-br from-primary to-accent flex items-center justify-center">
-                          <FaBriefcase className="text-3xl text-white" />
+                          <Briefcase className="w-8 h-9 text-white" strokeWidth={2.5} />
                         </div>
                       )}
                     </div>
@@ -109,7 +109,7 @@ He holds a Bachelor’s degree in Commerce (Accounting) from Meru University of 
                       className="w-10 h-10 bg-white/20 hover:bg-white/30 rounded-full flex items-center justify-center transition-all duration-300 hover:scale-110"
                       aria-label={`Connect with ${leader.name} on LinkedIn`}
                     >
-                      <FaLinkedin className="text-xl" />
+                      <Linkedin className="w-6 h-6" strokeWidth={2.5} />
                     </a>
                     <a 
                       href={leader.twitter} 
@@ -118,7 +118,7 @@ He holds a Bachelor’s degree in Commerce (Accounting) from Meru University of 
                       className="w-10 h-10 bg-white/20 hover:bg-white/30 rounded-full flex items-center justify-center transition-all duration-300 hover:scale-110"
                       aria-label={`Follow ${leader.name} on Twitter`}
                     >
-                      <FaTwitter className="text-xl" />
+                      <Twitter className="w-6 h-6" strokeWidth={2.5} />
                     </a>
                   </div>
                 </div>
@@ -153,13 +153,13 @@ He holds a Bachelor’s degree in Commerce (Accounting) from Meru University of 
               <div className="grid grid-cols-1 md:grid-cols-2 gap-8 mb-8">
                 <div className="space-y-6">
                   {[
-                    { text: 'Most advisory firms stop at recommendations. We don\'t.', icon: '🚫' },
-                    { text: 'We challenge assumptions.', icon: '💡' },
-                    { text: 'We confront reality.', icon: '🎯' },
-                    { text: 'We stay long enough to make change stick.', icon: '⏳' },
+                    { text: 'Most advisory firms stop at recommendations. We don\'t.', icon: <Slash className="w-6 h-6 text-blue-600" strokeWidth={2.5} /> },
+                    { text: 'We challenge assumptions.', icon: <Lightbulb className="w-6 h-6 text-blue-600" strokeWidth={2.5} /> },
+                    { text: 'We confront reality.', icon: <Target className="w-6 h-6 text-blue-600" strokeWidth={2.5} />},
+                    { text: 'We stay long enough to make change stick.', icon: <Clock className="w-6 h-6 text-blue-600" strokeWidth={2.5} /> },
                   ].map((item, index) => (
                     <div key={index} className="flex items-start">
-                      <div className="flex-shrink-0 w-10 h-10 bg-white/20 rounded-full flex items-center justify-center mr-4 mt-1">
+                      <div className="flex-shrink-0 w-10 h-10 bg-white rounded-full flex items-center justify-center mr-4 mt-1">
                         <span className="text-lg">{item.icon}</span>
                       </div>
                       <p className="text-lg font-bold">{item.text}</p>

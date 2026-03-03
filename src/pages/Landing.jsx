@@ -33,7 +33,7 @@ export default function Landing() {
         </p>
 
         <p className="font-medium mb-6">
-            🔍 It’s free. Answer 5 quick questions and get your Business Score.
+            🔍 It’s free. Answer 5 quick sections of questions and get your Business Score.
         </p>
 
         <div className="text-sm text-gray-600 mb-6">

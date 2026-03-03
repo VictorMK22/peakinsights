@@ -1,23 +1,23 @@
-import { FaChartLine, FaExclamationTriangle, FaFire } from 'react-icons/fa'
+import { LineChart, TriangleAlert, Flame } from 'lucide-react'
 
 const Problem = () => {
   const problemCards = [
     {
-      icon: <FaChartLine className="text-3xl" />,
+      icon: <LineChart className="w-8 h-8" strokeWidth={2.5} />,
       title: 'Growth Without Control',
       description: 'They grow revenue but lose control. They hire fast but execution weakens.',
       color: 'bg-[#DCEAF7] border-[#1F4FA3]/20',
       iconColor: 'text-blue-600',
     },
     {
-      icon: <FaExclamationTriangle className="text-3xl" />,
+      icon: <TriangleAlert className="w-8 h-8" strokeWidth={2.5} />,
       title: 'Decision Making Without Numbers',
       description: 'They make decisions without data. Strategy becomes noise. Finance becomes reporting.',
       color: 'bg-[#DCEAF7] border-[#1F4FA3]/20',
       iconColor: 'text-yellow-600',
     },
     {
-      icon: <FaFire className="text-3xl" />,
+      icon: <Flame className="w-8 h-8" strokeWidth={2.5} />,
       title: 'Leadership Becomes Firefighting',
       description: 'They survive but never fully break through. Leadership spends time on emergencies, not strategy.',
       color: 'bg-[#DCEAF7] border-[#1F4FA3]/20',
