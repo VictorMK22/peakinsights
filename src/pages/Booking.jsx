@@ -192,7 +192,7 @@ export default function Booking() {
               </div>
 
               {/* Date */}
-              <div>
+              {/* <div>
                 <label className="block text-sm font-medium text-gray-700 mb-1">Preferred Date</label>
                 <input
                   type="date"
@@ -202,10 +202,10 @@ export default function Booking() {
                   onChange={handleChange}
                   className="w-full border border-gray-300 rounded-lg px-4 py-3 focus:ring-2 focus:ring-indigo-500 focus:outline-none"
                 />
-              </div>
+              </div> */}
 
               {/* Time */}
-              <div>
+              {/* <div>
                 <label className="block text-sm font-medium text-gray-700 mb-1">Preferred Time (EAT)</label>
                 <select
                   name="time"
@@ -218,7 +218,7 @@ export default function Booking() {
                     <option key={slot} value={slot}>{slot}</option>
                   ))}
                 </select>
-              </div>
+              </div> */}
 
               {/* Score preview */}
               {score && (
@@ -238,17 +238,17 @@ export default function Booking() {
                   {status === "sending" ? "Sending..." : "✉️ Book via Email"}
                 </button>
 
-                <button
+                {/* <button
                   onClick={handleWhatsAppBook}
                   className="flex-1 bg-green-500 text-white py-4 rounded-xl font-semibold hover:bg-green-600 transition text-center"
                 >
                   💬 Book via WhatsApp
-                </button>
+                </button> */}
               </div>
 
-              <p className="text-xs text-gray-400 text-center pt-2">
+              {/* <p className="text-xs text-gray-400 text-center pt-2">
                 Sessions are 45–60 minutes · Free of charge · EAT timezone
-              </p>
+              </p> */}
 
             </div>
           </div>

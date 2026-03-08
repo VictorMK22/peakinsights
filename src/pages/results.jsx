@@ -1,15 +1,26 @@
 import { useNavigate } from "react-router-dom";
 import Footer from "../components/Footer";
 import MainHeader from "../components/MainHeader";
+import { generateAdvisoryPDF } from "../diagnostic/generatePDF"
 
 export default function Results() {
   const navigate = useNavigate();
   const storedResult = localStorage.getItem("peak_result");
   const result = storedResult ? JSON.parse(storedResult) : null;
+  const score = result.score;
 
   if (!result) return <p className="text-center mt-10">No results available.</p>;
 
   const name = localStorage.getItem("peak_name") || "Founder";
+
+  const handleDownload = async () => {
+    const pdf = await generateAdvisoryPDF(result, name, score);
+  
+    const link = document.createElement("a");
+    link.href = pdf;
+    link.download = `PeakInsights_Report_${name.replace(/\s+/g, "_")}.pdf`;
+    link.click();
+  };
 
   return (
     <>
@@ -26,10 +37,10 @@ export default function Results() {
                 Thanks for completing the PeakInsights Business Diagnostic test.
               </p>
               <div className="mt-6 text-lg font-semibold">
-                📊 Your Business Score: {result.score}%
+                📊 Your Business Score: <span className="text-indigo-600">{result.score}%</span>
               </div>
-              <div className="mt-2">
-                📌 Category: {result.title}
+              <div className="mt-2 text-lg font-semibold">
+                📌 Category: <span className="text-indigo-600">{result.title}</span>
               </div>
             </div>
 
@@ -45,20 +56,27 @@ export default function Results() {
               <h2 className="text-lg font-semibold text-gray-800 mb-2">
                 Ready to take the next step?
               </h2>
-              <p className="text-gray-500 text-sm mb-6">
+              <p className="text-gray-500 text-2xl mb-6">
                 Book a free Business Health Advisory Session with our advisory team.
               </p>
 
-              <button
-                onClick={() => navigate("/booking")}
-                className="bg-indigo-600 text-white px-12 py-4 rounded-xl font-semibold hover:bg-indigo-700 transition"
-              >
-                📅 Book a Session
-              </button>
+              <div className="pt-4 flex flex-col sm:flex-row gap-4 sm:justify-evenly">
+                <button
+                  onClick={() => navigate("/booking")}
+                  className="bg-indigo-600 text-white px-12 py-4 rounded-xl font-semibold hover:bg-indigo-700 transition"
+                >
+                  📅 Book a Session
+                </button>
 
-              <p className="text-xs text-gray-400 mt-4">
-                Sessions are 45–60 minutes · Free of charge · EAT timezone
+                <button onClick={handleDownload} className="bg-indigo-600 text-white px-12 py-4 rounded-xl font-semibold hover:bg-indigo-700 transition">
+                  ⬇️ Download Report
+                </button>
+              </div>
+
+              <p className="text-xl text-gray-400 mt-4">
+                Sessions are 30 minutes · Free of charge · EAT timezone
               </p>
+
             </div>
 
           </div>

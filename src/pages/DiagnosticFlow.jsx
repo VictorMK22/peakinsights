@@ -79,9 +79,13 @@ export default function DiagnosticFlow() {
 
                 <div className="p-4">
                   <span className="font-semibold">Readiness Category:</span>
-                  <span className="ml-2 font-semibold">
+                  {isComplete ? (<span className="ml-2 font-semibold">
                     {result.icon} {result.title}
-                  </span>
+                  </span>) : (
+                    <span className="ml-2 text-gray-400">
+                      Complete all questions to view Readiness Category
+                    </span>
+                  )}
                 </div>
 
                 <div className="p-4">

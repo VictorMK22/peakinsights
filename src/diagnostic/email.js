@@ -13,8 +13,8 @@ export function sendAdvisoryEmail(payload) {
 
       // Diagnostic core
       score: payload.score,
-      preferred_date: payload.preferred_date,
-      preferred_time: payload.preferred_time,
+      // preferred_date: payload.preferred_date,
+      // preferred_time: payload.preferred_time,
       classification: payload.classification,
       summary: payload.summary,
 
